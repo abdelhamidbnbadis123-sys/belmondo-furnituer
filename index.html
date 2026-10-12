@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="docTitle">BELMONDO | بلموندو للأثاث - ICI C'EST L'ART</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            950: '#032319',
+                            900: '#073B2C',
+                            800: '#0C533F',
+                            700: '#147056',
+                        },
+                        gold: {
+                            100: '#FFF6D6',
+                            300: '#F3E5A5',
+                            400: '#E6C280',
+                            500: '#D4AF37',
+                            600: '#AA8822',
+                            700: '#806412',
+                        }
+                    },
+                    fontFamily: {
+                        tajawal: ['Tajawal', 'sans-serif'],
+                        montserrat: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Tajawal', 'Montserrat', sans-serif;
+            background-color: #031b13;
+            color: #f3f4f6;
+        }
+        .font-brand {
+            font-family: 'Montserrat', sans-serif;
+        }
+        /* Custom Gold Gradients */
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF0B2 0%, #D4AF37 50%, #997A15 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-gradient-bg {
+            background: linear-gradient(135deg, #E6C280 0%, #D4AF37 50%, #B89020 100%);
+        }
+        .emerald-glass {
+            background: rgba(7, 59, 44, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .card-glass {
+            background: rgba(12, 83, 63, 0.4);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        .badge-tombola {
+            background: linear-gradient(90deg, #dc2626, #f59e0b, #dc2626);
+            background-size: 200% 100%;
+            animation: shimmer 2.5s infinite;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #031b13;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D4AF37;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between overflow-x-hidden">
+
+    <div class="bg-emerald-950 border-b border-gold-500/20 text-xs sm:text-sm py-2 px-4">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+            
+            <div class="flex items-center space-x-4 space-x-reverse text-gold-400">
+                <a href="https://maps.google.com/?q=Eurl+Belmondo+Chlef" target="_blank" class="flex items-center gap-1 hover:text-white transition">
+                    <i class="fa-solid fa-location-dot text-gold-400"></i> <span id="topLocText">Eurl Belmondo - الشلف، الجزائر</span>
+                </a>
+                <span class="hidden sm:inline text-gold-500/30">|</span>
+                <span class="hidden sm:flex items-center gap-1 text-gray-300">
+                    <i class="fa-regular fa-clock"></i> <span id="topHoursText">يومياً: 09:00 - 20:00</span>
+                </span>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <!-- Direct Phone Calling Links -->
+                <div class="flex items-center gap-2 dir-ltr">
+                    <a href="tel:0550606628" title="اتصل الآن" class="text-gold-400 hover:text-white transition flex items-center gap-1 font-brand text-xs font-bold bg-emerald-900/60 px-2.5 py-1 rounded-md border border-gold-500/30 hover:border-gold-400">
+                        <i class="fa-solid fa-phone text-xs text-gold-400"></i> <span>0550 60 66 28</span>
+                    </a>
+                    <a href="tel:0550606629" title="اتصل الآن" class="text-gold-400 hover:text-white transition flex items-center gap-1 font-brand text-xs font-bold bg-emerald-900/60 px-2.5 py-1 rounded-md border border-gold-500/30 hover:border-gold-400">
+                        <i class="fa-solid fa-phone text-xs text-gold-400"></i> <span>0550 60 66 29</span>
+                    </a>
+                </div>
+
+                <!-- Language Switcher Dropdown -->
+                <div class="relative inline-block text-left">
+                    <select id="langSelect" onchange="changeLanguage(this.value)" class="bg-emerald-900 text-gold-300 font-bold text-xs py-1 px-2 rounded-lg border border-gold-500/40 focus:outline-none cursor-pointer hover:bg-emerald-800">
+                        <option value="ar" selected>العربية 🇩🇿</option>
+                        <option value="fr">Français 🇫🇷</option>
+                        <option value="en">English 🇬🇧</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <header class="sticky top-0 z-40 emerald-glass border-b border-gold-500/30 transition-all duration-300 shadow-2xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 rounded-lg border-2 border-gold-500/80 bg-emerald-950 flex items-center justify-center shadow-lg group-hover:scale-105 transition duration-300">
+                        <span class="font-brand font-black text-2xl text-gold-400 tracking-tighter">BB</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-brand font-extrabold text-2xl sm:text-3xl text-gold-400 tracking-wider leading-none">BELMONDO</span>
+                        <span class="font-brand text-[10px] sm:text-xs text-gray-300 tracking-widest mt-1 gold-gradient-text font-semibold">ICI C'EST L'ART</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-6 space-x-reverse font-medium text-sm text-gray-200">
+                    <a href="#hero" id="navHome" class="hover:text-gold-400 transition py-1">الرئيسية</a>
+                    <a href="#products" id="navProducts" class="hover:text-gold-400 transition py-1">المنتجات والمعرض</a>
+                    <a href="#offers" id="navOffers" class="hover:text-gold-400 transition py-1 text-gold-300">العروض والطومبولا</a>
+                    <a href="#location" id="navLocation" class="hover:text-gold-400 transition py-1">موقعنا GPS</a>
+                    <a href="#contact" id="navContact" class="hover:text-gold-400 transition py-1">اتصل بنا</a>
+                </nav>
+
+                <!-- Admin & Contact Actions -->
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <a href="https://wa.me/213550606628" target="_blank" class="hidden sm:flex items-center gap-2 bg-emerald-800/80 hover:bg-emerald-700 text-white px-3 py-2 rounded-lg text-xs font-bold border border-gold-500/40 transition shadow-md">
+                        <i class="fa-brands fa-whatsapp text-emerald-400 text-base"></i>
+                        <span id="btnWaText">واتساب</span>
+                    </a>
+                    
+                    <button onclick="openAdminAuthModal()" class="gold-gradient-bg text-emerald-950 px-3 py-2 rounded-lg text-xs font-black flex items-center gap-1.5 shadow-md hover:brightness-110 transition">
+                        <i class="fa-solid fa-lock" id="adminLockIcon"></i>
+                        <span id="adminBtnText">لوحة الإدارة</span>
+                    </button>
+
+                    <button onclick="toggleMobileMenu()" class="md:hidden text-gold-400 p-2 text-xl focus:outline-none">
+                        <i class="fa-solid fa-bars" id="mobileMenuIcon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobileMenu" class="hidden md:hidden bg-emerald-950/95 border-b border-gold-500/30 px-4 pt-2 pb-6 space-y-3 text-sm">
+            <a href="#hero" onclick="toggleMobileMenu()" id="mNavHome" class="block text-gray-200 hover:text-gold-400 py-2 border-b border-white/5">الرئيسية</a>
+            <a href="#products" onclick="toggleMobileMenu()" id="mNavProducts" class="block text-gray-200 hover:text-gold-400 py-2 border-b border-white/5">المنتجات والمعرض</a>
+            <a href="#offers" onclick="toggleMobileMenu()" id="mNavOffers" class="block text-gold-300 hover:text-gold-400 py-2 border-b border-white/5">العروض والطومبولا</a>
+            <a href="#location" onclick="toggleMobileMenu()" id="mNavLocation" class="block text-gray-200 hover:text-gold-400 py-2 border-b border-white/5">موقعنا GPS (الشلف)</a>
+            <a href="#contact" onclick="toggleMobileMenu()" id="mNavContact" class="block text-gray-200 hover:text-gold-400 py-2">اتصل بنا</a>
+        </div>
+    </header>
+
+    <section id="hero" class="relative min-h-[85vh] flex items-center justify-center overflow-hidden py-16">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-r from-emerald-950 via-emerald-950/80 to-emerald-950/90 z-10"></div>
+            <div class="absolute -top-32 -right-32 w-96 h-96 border-[40px] border-gold-500/20 rounded-full blur-sm"></div>
+            <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#031b13] to-transparent z-10"></div>
+            <img src="1000030266.jpg" alt="BELMONDO Showroom Banner" class="w-full h-full object-cover object-center opacity-35 scale-105 transform hover:scale-100 transition duration-1000" onerror="this.src='https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1600&q=80';">
+        </div>
+
+        <div class="relative z-20 max-w-5xl mx-auto px-4 text-center space-y-6">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-900/90 border border-gold-500/50 text-gold-300 text-xs sm:text-sm font-semibold tracking-wide shadow-lg">
+                <i class="fa-solid fa-crown text-gold-400"></i> <span id="heroBadge">المعرض الأرقى للأثاث الفاخر والديكور</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight leading-tight">
+                <span class="block text-white font-tajawal mb-2" id="heroTitle">معرض بلموندو للأثاث</span>
+                <span class="font-brand gold-gradient-text tracking-wider uppercase text-3xl sm:text-5xl md:text-6xl">BELMONDO</span>
+            </h1>
+
+            <p class="text-gold-300/90 font-brand font-medium text-lg sm:text-2xl tracking-widest uppercase">
+                " ICI C'EST L'ART "
+            </p>
+
+            <p id="heroDesc" class="max-w-2xl mx-auto text-gray-300 text-sm sm:text-base leading-relaxed">
+                نقدم لكم أفخم تشكيلات صالونات المودرن، غرف النوم الملكية، طاولات الطعام الفاخرة والديكورات العصرية بلمسة فنية تحوّل منزلك إلى تحفة معمارية.
+            </p>
+
+            <!-- Buttons -->
+            <div class="flex flex-wrap justify-center items-center gap-4 pt-4">
+                <a href="#products" class="gold-gradient-bg text-emerald-950 font-black px-8 py-3.5 rounded-xl text-sm sm:text-base shadow-xl hover:shadow-gold-500/20 hover:scale-105 transition duration-300 flex items-center gap-2">
+                    <i class="fa-solid fa-couch"></i> <span id="heroBtnProducts">استكشف التشكيلة</span>
+                </a>
+                <a href="https://wa.me/213550606628?text=السلام%20علیکم%20اريد%20الاستفسار%20عن%20منتجات%20معرض%20بلموندو" target="_blank" class="bg-emerald-900/90 hover:bg-emerald-800 text-white font-bold border border-gold-500/50 px-8 py-3.5 rounded-xl text-sm sm:text-base shadow-lg transition flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i> <span id="heroBtnWa">تواصل عبر الواتساب</span>
+                </a>
+            </div>
+
+            <!-- Direct Call Click Cards -->
+            <div class="pt-8 flex flex-wrap justify-center items-center gap-4 text-sm text-gray-300 border-t border-gold-500/20 max-w-xl mx-auto">
+                <a href="tel:0550606628" class="flex items-center gap-2 bg-emerald-950/80 hover:bg-emerald-900 px-4 py-2.5 rounded-xl border border-gold-500/30 hover:border-gold-400 transition">
+                    <i class="fa-solid fa-phone-volume text-gold-400 text-base"></i>
+                    <span><span id="lblPhone1">الهاتف 1:</span> <strong class="font-brand text-white text-base">0550 60 66 28</strong></span>
+                </a>
+                <a href="tel:0550606629" class="flex items-center gap-2 bg-emerald-950/80 hover:bg-emerald-900 px-4 py-2.5 rounded-xl border border-gold-500/30 hover:border-gold-400 transition">
+                    <i class="fa-solid fa-phone-volume text-gold-400 text-base"></i>
+                    <span><span id="lblPhone2">الهاتف 2:</span> <strong class="font-brand text-white text-base">0550 60 66 29</strong></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="adminPanel" class="hidden bg-emerald-950 border-y-2 border-gold-500 py-10 px-4 transition-all">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-wrap justify-between items-center pb-6 border-b border-gold-500/30 gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full gold-gradient-bg text-emerald-950 flex items-center justify-center font-bold text-xl">
+                        <i class="fa-solid fa-sliders"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <h2 class="text-2xl font-bold text-gold-400" id="admHeaderTitle">لوحة إشراف وإدارة المعرض</h2>
+                            <span id="userRoleBadge" class="bg-gold-500 text-emerald-950 text-[10px] font-black px-2.5 py-0.5 rounded-full">المالك</span>
+                        </div>
+                        <p class="text-xs text-gray-300" id="admHeaderSub">إضافة، تعديل وحذف المنتجات والعروض مع التحديث الفوري</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-2">
+                    <button onclick="logoutAdmin()" class="bg-red-900/80 hover:bg-red-700 text-white border border-red-500/50 px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 shadow-lg">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span id="admBtnLogout">تسجيل الخروج</span>
+                    </button>
+                    
+                    <button onclick="closeAdminPanel()" class="text-gray-400 hover:text-gold-400 p-2 text-xl">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <form id="productForm" onsubmit="handleProductSubmit(event)" class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 bg-emerald-900/40 p-6 rounded-2xl border border-gold-500/30">
+                <input type="hidden" id="prodId">
+
+                <div class="space-y-1">
+                    <label class="block text-xs font-bold text-gold-300" id="lblProdName">اسم المنتج / الأثاث *</label>
+                    <input type="text" id="prodName" required placeholder="صالون مودرن ملكي" class="w-full bg-emerald-950 border border-gold-500/40 rounded-lg p-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
+                </div>
+
+                <div class="space-y-1">
+                    <label class="block text-xs font-bold text-gold-300" id="lblProdCategory">الصنف / القسم *</label>
+                    <select id="prodCategory" required class="w-full bg-emerald-950 border border-gold-500/40 rounded-lg p-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
+                        <option value="salons">صالونات (Salons)</option>
+                        <option value="bedrooms">غرف نوم (Chambres à coucher)</option>
+                        <option value="dining">طاولات طعام (Tables à manger)</option>
+                        <option value="decor">ديكورات وتجهيزات (Décorations)</option>
+                        <option value="other">منتجات أخرى</option>
+                    </select>
+                </div>
+
+                <div class="space-y-1">
+                    <label class="block text-xs font-bold text-gold-300" id="lblProdPrice">السعر الأصلي (د.ج) *</label>
+                    <input type="number" id="prodPrice" required placeholder="185000" class="w-full bg-emerald-950 border border-gold-500/40 rounded-lg p-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
+                </div>
+
+                <div class="space-y-1">
+                    <label class="block text-xs font-bold text-gold-300" id="lblProdDiscount">سعر التخفيض Remise (اختياري)</label>
+                    <input type="number" id="prodDiscountPrice" placeholder="165000" class="w-full bg-emerald-950 border border-gold-500/40 rounded-lg p-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
+                </div>
+
+                <div class="space-y-1">
+                    <label class="block text-xs font-bold text-gold-300" id="lblProdTags">شارات خاصة بالمنتج</label>
+                    <div class="flex items-center gap-4 pt-2">
+                        <label class="flex items-center gap-1.5 text-xs text-gray-200 cursor-pointer">
+                            <input type="checkbox" id="tagRemise" class="rounded accent-gold-500">
+                            <span class="text-red-400 font-bold">Remise</span>
+                        </label>
+                        <label class="flex items-center gap-1.5 text-xs text-gray-200 cursor-pointer">
+                            <input type="checkbox" id="tagTombola" class="rounded accent-gold-500">
+                            <span class="text-yellow-400 font-bold">Tombola</span>
+                        </label>
+                        <label class="flex items-center gap-1.5 text-xs text-gray-200 cursor-pointer">
+                            <input type="checkbox" id="tagNew" class="rounded accent-gold-500">
+                            <span class="text-emerald-400 font-bold">جديد (Nouveau)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="space-y-1">
+                    <label class="block text-xs font-bold text-gold-300" id="lblProdImg">صورة المنتج (تحميل مباشر من الجهاز) *</label>
+                    <input type="file" id="prodImageFile" accept="image/*" onchange="previewImageFile(event)" class="w-full bg-emerald-950 border border-gold-500/40 rounded-lg p-1.5 text-xs text-gray-300 file:mr-2 file:py-1 file:px-3 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-gold-500 file:text-emerald-950 hover:file:bg-gold-400 cursor-pointer">
+                    <input type="hidden" id="prodImageData">
+                    <div id="imagePreviewContainer" class="hidden mt-2 flex items-center gap-2">
+                        <img id="imagePreview" src="" class="w-12 h-12 object-cover rounded-lg border border-gold-500">
+                        <span class="text-[10px] text-emerald-300">تم اختيار الصورة بنجاح!</span>
+                    </div>
+                </div>
+
+                <div class="space-y-1 md:col-span-2 lg:col-span-3">
+                    <label class="block text-xs font-bold text-gold-300" id="lblProdDesc">وصف المنتج والمواصفات</label>
+                    <textarea id="prodDesc" rows="2" placeholder="تفاصيل الخشب والقماش والضمان..." class="w-full bg-emerald-950 border border-gold-500/40 rounded-lg p-2.5 text-sm text-white focus:outline-none focus:border-gold-400"></textarea>
+                </div>
+
+                <div class="md:col-span-2 lg:col-span-3 flex justify-end gap-3 pt-2">
+                    <button type="button" onclick="resetProductForm()" id="btnResetForm" class="px-4 py-2 rounded-lg bg-gray-700 hover:bg-gray-600 text-white text-xs font-bold">إلغاء / تفريغ</button>
+                    <button type="submit" id="saveProdBtn" class="gold-gradient-bg text-emerald-950 px-6 py-2.5 rounded-lg text-sm font-black shadow-lg hover:brightness-110 flex items-center gap-2">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                        <span id="lblSaveBtn">حفظ ونشر المزامنة الفورية</span>
+                    </button>
+                </div>
+            </form>
+
+            <div class="mt-8">
+                <h3 class="text-lg font-bold text-gold-300 mb-3 flex items-center gap-2">
+                    <i class="fa-solid fa-list-check"></i> <span id="lblAdminListTitle">إدارة المنتجات المنشورة</span> (<span id="adminProdCount">0</span>)
+                </h3>
+                <div class="overflow-x-auto rounded-xl border border-gold-500/20 bg-emerald-950/80">
+                    <table class="w-full text-right text-sm text-gray-200">
+                        <thead class="bg-emerald-900/90 text-gold-400 text-xs font-bold uppercase border-b border-gold-500/30">
+                            <tr>
+                                <th class="p-3" id="thImg">الصورة</th>
+                                <th class="p-3" id="thName">الاسم</th>
+                                <th class="p-3" id="thCat">الصنف</th>
+                                <th class="p-3" id="thPrice">السعر</th>
+                                <th class="p-3" id="thBadges">الشارات</th>
+                                <th class="p-3 text-center" id="thActions">التحكم</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminProductsTableBody">
+                            <tr>
+                                <td colspan="6" class="p-4 text-center text-gray-400">جاري تحميل المنتجات...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="py-16 px-4 max-w-7xl mx-auto w-full">
+        <div class="text-center space-y-3 mb-10">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+                <span id="secProdTitle">معرض المنتجات</span> <span class="gold-gradient-text" id="secProdSub">الفاخرة</span>
+            </h2>
+            <p id="secProdDesc" class="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto">
+                اختر التصميم الذي يناسب ذوقك الرفيع من أحدث تشكيلاتنا المتاحة بالمعرض.
+            </p>
+        </div>
+
+        <!-- Filter Category Tabs -->
+        <div class="flex flex-wrap justify-center items-center gap-2 mb-10 text-xs sm:text-sm">
+            <button onclick="filterProducts('all')" class="filter-btn active bg-gold-500 text-emerald-950 font-bold px-4 py-2 rounded-xl border border-gold-500 transition" data-cat="all" id="tabAll">الكل</button>
+            <button onclick="filterProducts('salons')" class="filter-btn bg-emerald-900/80 hover:bg-emerald-800 text-gray-200 font-bold px-4 py-2 rounded-xl border border-gold-500/30 transition" data-cat="salons" id="tabSalons"><i class="fa-solid fa-couch ml-1"></i> صالونات</button>
+            <button onclick="filterProducts('bedrooms')" class="filter-btn bg-emerald-900/80 hover:bg-emerald-800 text-gray-200 font-bold px-4 py-2 rounded-xl border border-gold-500/30 transition" data-cat="bedrooms" id="tabBedrooms"><i class="fa-solid fa-bed ml-1"></i> غرف نوم</button>
+            <button onclick="filterProducts('dining')" class="filter-btn bg-emerald-900/80 hover:bg-emerald-800 text-gray-200 font-bold px-4 py-2 rounded-xl border border-gold-500/30 transition" data-cat="dining" id="tabDining"><i class="fa-solid fa-utensils ml-1"></i> طاولات طعام</button>
+            <button onclick="filterProducts('decor')" class="filter-btn bg-emerald-900/80 hover:bg-emerald-800 text-gray-200 font-bold px-4 py-2 rounded-xl border border-gold-500/30 transition" data-cat="decor" id="tabDecor"><i class="fa-solid fa-wand-magic-sparkles ml-1"></i> ديكورات</button>
+            <button onclick="filterProducts('offers')" class="filter-btn bg-red-950/80 hover:bg-red-900 text-red-200 font-bold px-4 py-2 rounded-xl border border-red-500/40 transition" data-cat="offers" id="tabOffers"><i class="fa-solid fa-percent ml-1 text-red-400"></i> Remise</button>
+            <button onclick="filterProducts('tombola')" class="filter-btn bg-amber-950/80 hover:bg-amber-900 text-amber-200 font-bold px-4 py-2 rounded-xl border border-amber-500/40 transition" data-cat="tombola" id="tabTombola"><i class="fa-solid fa-ticket ml-1 text-amber-400"></i> Tombola</button>
+        </div>
+
+        <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div class="col-span-full py-12 text-center text-gold-400">
+                <i class="fa-solid fa-circle-notch fa-spin text-3xl mb-3"></i>
+                <p>جاري تحميل منتجات معرض بلموندو...</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="offers" class="py-12 bg-emerald-950/80 border-y border-gold-500/20 my-12 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="card-glass p-8 sm:p-10 rounded-3xl border-2 border-gold-500/40 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="space-y-4 text-center md:text-right max-w-xl">
+                    <span class="inline-block px-3 py-1 bg-red-600/30 border border-red-500 text-red-300 font-bold text-xs rounded-full uppercase tracking-wider" id="offerTag">
+                        <i class="fa-solid fa-fire text-xs"></i> عروض موسيقية حصرية
+                    </span>
+                    <h3 class="text-3xl sm:text-4xl font-black text-white" id="offerTitle">
+                        تخفيضات وسحوبات <span class="gold-gradient-text">الطومبولا الكبرى</span>
+                    </h3>
+                    <p class="text-gray-300 text-sm leading-relaxed" id="offerDesc">
+                        استمتع بأقوى العروض الحصرية والتخفيضات الاستثنائية على تشكيلات الأثاث الراقي، مع فرصة الدخول في سحوبات طومبولا بلموندو عند الشراء من المعرض!
+                    </p>
+                </div>
+
+                <div class="w-full md:w-80 p-6 rounded-2xl bg-emerald-900/90 border border-gold-500/50 text-center space-y-4 shadow-xl">
+                    <div class="w-16 h-16 mx-auto rounded-full badge-tombola flex items-center justify-center text-white text-2xl shadow-lg">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <h4 class="font-bold text-lg text-gold-300" id="tombolaBoxTitle">سحوبات طومبولا المعرض</h4>
+                    <p class="text-xs text-gray-300 leading-normal" id="tombolaBoxDesc">
+                        كل اقتناء يمنحك فرصة دخول سحب طومبولا بلموندو للفوز بجوائز قيمة.
+                    </p>
+                    <a href="tel:0550606628" class="block w-full text-center py-2 bg-emerald-950 hover:bg-emerald-900 text-gold-400 font-bold rounded-lg text-xs border border-gold-500/30">
+                        <i class="fa-solid fa-phone text-xs ml-1"></i> <span id="tombolaBoxCall">اتصل للاستفسار</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="location" class="py-16 px-4 max-w-7xl mx-auto w-full">
+        <div class="text-center space-y-3 mb-10">
+            <div class="inline-flex items-center gap-1.5 text-gold-400 text-xs font-bold uppercase tracking-widest" id="gpsBadge">
+                <i class="fa-solid fa-map-pin"></i> موقعنا المباشر عبر الجي بي أس
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-black text-white">
+                <span id="gpsTitle1">تفضلوا بزيارة معرض</span> <span class="gold-gradient-text" id="gpsTitle2">Eurl Belmondo Chlef</span>
+            </h2>
+            <p class="text-gray-300 text-sm max-w-xl mx-auto" id="gpsSub">
+                موقع معرضنا على الـ GPS بمدينة الشلف لمعاينة أفضل التشكيلات المتاحة.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+            <div class="card-glass p-6 sm:p-8 rounded-2xl border border-gold-500/30 flex flex-col justify-between space-y-6">
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl gold-gradient-bg text-emerald-950 flex items-center justify-center text-xl font-bold shrink-0 shadow-md">
+                            <i class="fa-solid fa-store"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gold-400">Eurl Belmondo</h3>
+                            <p class="text-xs text-gray-300 mt-1" id="gpsCardSub">معرض وبلموندو للأثاث والديكور - الشلف</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4 text-sm text-gray-200 border-t border-gold-500/20 pt-4">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-location-dot text-gold-400 w-5"></i>
+                            <span id="gpsAddress">ولاية الشلف، الجزائر (Chlef, Algeria)</span>
+                        </div>
+                        <a href="tel:0550606628" class="flex items-center gap-3 hover:text-gold-400 transition">
+                            <i class="fa-solid fa-phone text-gold-400 w-5"></i>
+                            <span class="font-brand">0550 60 66 28</span>
+                        </a>
+                        <a href="tel:0550606629" class="flex items-center gap-3 hover:text-gold-400 transition">
+                            <i class="fa-solid fa-phone text-gold-400 w-5"></i>
+                            <span class="font-brand">0550 60 66 29</span>
+                        </a>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-truck-fast text-gold-400 w-5"></i>
+                            <span id="gpsDelivery">توصيل متوفر لكافة الولايات</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-3 pt-4 border-t border-gold-500/20">
+                    <a href="https://maps.google.com/?q=Eurl+Belmondo+Chlef" target="_blank" class="w-full gold-gradient-bg text-emerald-950 font-black py-3 rounded-xl text-center text-sm shadow-lg hover:brightness-110 transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-diamond-turn-right"></i>
+                        <span id="btnGpsOpen">فتح الاتجاهات مباشرة على Google Maps</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Google Map -->
+            <div class="lg:col-span-2 rounded-2xl overflow-hidden border-2 border-gold-500/30 shadow-2xl min-h-[350px] relative bg-emerald-950">
+                <iframe 
+                    title="Eurl Belmondo Chlef GPS Map" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12864.5!2d1.33!3d36.165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12842d123456789%3A0x0!2sEurl+Belmondo+Chlef!5e0!3m2!1sfr!2sdz!4v1700000000000" 
+                    class="w-full h-full min-h-[380px] border-0 filter brightness-95 contrast-105" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-emerald-950 border-t-2 border-gold-500/40 text-gray-300 pt-12 pb-6 px-4">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+            
+            <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg border border-gold-500 bg-emerald-900 flex items-center justify-center">
+                        <span class="font-brand font-black text-xl text-gold-400">BB</span>
+                    </div>
+                    <div>
+                        <span class="font-brand font-extrabold text-2xl text-gold-400 tracking-wider">BELMONDO</span>
+                        <p class="text-[10px] text-gray-300 font-brand tracking-widest gold-gradient-text">ICI C'EST L'ART</p>
+                    </div>
+                </div>
+                <p class="text-xs text-gray-300 leading-relaxed" id="footerAbout">
+                    معرض بلموندو للأثاث والديكور الراقي بالشلف (Eurl Belmondo Chlef). تصميمات فاخرة وجودة استثنائية.
+                </p>
+            </div>
+
+            <div class="space-y-3">
+                <h4 class="text-gold-400 font-bold text-sm border-b border-gold-500/30 pb-2" id="footerQuickLinks">الروابط السريعة</h4>
+                <ul class="space-y-2 text-xs text-gray-300">
+                    <li><a href="#hero" class="hover:text-gold-400 transition" id="fLinkHome">الرئيسية</a></li>
+                    <li><a href="#products" class="hover:text-gold-400 transition" id="fLinkProducts">المعرض والمنتجات</a></li>
+                    <li><a href="#offers" class="hover:text-gold-400 transition" id="fLinkOffers">العروض والطومبولا</a></li>
+                    <li><a href="#location" class="hover:text-gold-400 transition" id="fLinkLocation">موقع Eurl Belmondo GPS</a></li>
+                </ul>
+            </div>
+
+            <div class="space-y-3">
+                <h4 class="text-gold-400 font-bold text-sm border-b border-gold-500/30 pb-2" id="footerContactTitle">الاتصال المباشر</h4>
+                <div class="space-y-2 text-xs">
+                    <a href="tel:0550606628" class="flex items-center gap-2 hover:text-gold-400 transition">
+                        <i class="fa-solid fa-phone text-gold-400"></i>
+                        <span class="font-brand">0550 60 66 28</span>
+                    </a>
+                    <a href="tel:0550606629" class="flex items-center gap-2 hover:text-gold-400 transition">
+                        <i class="fa-solid fa-phone text-gold-400"></i>
+                        <span class="font-brand">0550 60 66 29</span>
+                    </a>
+                    <a href="https://wa.me/213550606628" target="_blank" class="flex items-center gap-2 text-emerald-400 hover:underline">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>WhatsApp: 0550606628</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="space-y-3">
+                <h4 class="text-gold-400 font-bold text-sm border-b border-gold-500/30 pb-2" id="footerAdminTitle">لوحة المشرف</h4>
+                <p class="text-xs text-gray-300" id="footerAdminSub">
+                    تسجيل الدخول الآمن لإدارة المنتجات والتخفيضات.
+                </p>
+                <button onclick="openAdminAuthModal()" class="w-full bg-emerald-900 hover:bg-emerald-800 text-gold-300 border border-gold-500/40 py-2 rounded-lg text-xs font-bold transition flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-key"></i> <span id="fBtnAdmin">تسجيل دخول المشرف</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Copyright Reserved exclusively to Tayeb Ahmed Abdelkrim 2026 -->
+        <div class="max-w-7xl mx-auto border-t border-gold-500/20 pt-6 text-center text-xs text-gray-300 flex flex-col sm:flex-row justify-between items-center gap-2">
+            <p id="copyrightText" class="font-bold text-gold-300">
+                جميع الحقوق محفوظة © طيب أحمد عبد الكريم 2026
+            </p>
+            <p class="font-brand text-gold-400/80">BELMONDO - ICI C'EST L'ART</p>
+        </div>
+    </footer>
+
+    <!-- Admin Authentication Modal -->
+    <div id="adminAuthModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="emerald-glass p-6 sm:p-8 rounded-2xl max-w-md w-full border-2 border-gold-500 shadow-2xl space-y-4 relative">
+            <button onclick="closeAdminAuthModal()" class="absolute top-4 left-4 text-gray-400 hover:text-white">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div class="text-center space-y-2">
+                <div class="w-14 h-14 mx-auto rounded-full gold-gradient-bg text-emerald-950 flex items-center justify-center text-2xl shadow-lg">
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gold-400" id="modalAuthTitle">الدخول إلى لوحة الإدارة</h3>
+                <p class="text-xs text-gray-300" id="modalAuthSub">أدخل رمز المرور السري (المالك أو المشرف)</p>
+            </div>
+            
+            <form onsubmit="verifyAdminPassword(event)" class="space-y-4 pt-2">
+                <div>
+                    <input type="password" id="adminPassInput" required placeholder="••••••••" class="w-full bg-emerald-950 border border-gold-500/50 rounded-xl p-3 text-center text-white focus:outline-none focus:border-gold-400 text-sm tracking-widest">
+                </div>
+                <button type="submit" class="w-full gold-gradient-bg text-emerald-950 font-black py-3 rounded-xl text-sm shadow-lg hover:brightness-110 transition flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-key"></i>
+                    <span id="modalAuthSubmit">تأكيد الدخول</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getDatabase, ref, onValue, set, push, remove, update } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+
+        const firebaseConfig = {
+            databaseURL: "https://belmondo-furnituer-02-default-rtdb.firebaseio.com/"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+        const productsRef = ref(db, 'products');
+
+        window.allProducts = {};
+        window.currentCategoryFilter = 'all';
+        window.isAdminLoggedIn = false;
+
+        onValue(productsRef, (snapshot) => {
+            const data = snapshot.val() || {};
+            window.allProducts = data;
+            renderProductsGrid();
+            renderAdminProductsTable();
+        }, (error) => {
+            console.error("Firebase DB Sync Error:", error);
+        });
+
+        window.saveProductToFirebase = async function(productData, productId = null) {
+            try {
+                if (productId) {
+                    await update(ref(db, `products/${productId}`), productData);
+                } else {
+                    const newRef = push(productsRef);
+                    await set(newRef, { ...productData, createdAt: Date.now() });
+                }
+                alert(window.currentLang === 'fr' ? 'Produit enregistré avec succès!' : window.currentLang === 'en' ? 'Product saved successfully!' : 'تم حفظ المنتج بنجاح وتزامنه فوراً!');
+                resetProductForm();
+            } catch (err) {
+                alert('Error: ' + err.message);
+            }
+        };
+
+        window.deleteProductFromFirebase = async function(id) {
+            const msg = window.currentLang === 'fr' ? 'Voulez-vous vraiment supprimer ce produit?' : window.currentLang === 'en' ? 'Are you sure you want to delete this product?' : 'هل أنت متأكد من رغبتك في حذف هذا المنتج؟';
+            if (confirm(msg)) {
+                try {
+                    await remove(ref(db, `products/${id}`));
+                } catch (err) {
+                    alert('Error: ' + err.message);
+                }
+            }
+        };
+    </script>
+
+    <script>
+        // Language Dictionary Data
+        const translations = {
+            ar: {
+                docTitle: "BELMONDO | بلموندو للأثاث - ICI C'EST L'ART",
+                topLocText: "Eurl Belmondo - الشلف، الجزائر",
+                topHoursText: "يومياً: 09:00 - 20:00",
+                navHome: "الرئيسية",
+                navProducts: "المنتجات والمعرض",
+                navOffers: "العروض والطومبولا",
+                navLocation: "موقعنا GPS",
+                navContact: "اتصل بنا",
+                btnWaText: "واتساب",
+                adminBtnText: "لوحة الإدارة",
+                heroBadge: "المعرض الأرقى للأثاث الفاخر والديكور",
+                heroTitle: "معرض بلموندو للأثاث",
+                heroDesc: "نقدم لكم أفخم تشكيلات صالونات المودرن، غرف النوم الملكية، طاولات الطعام الفاخرة والديكورات العصرية بلمسة فنية تحوّل منزلك إلى تحفة معمارية.",
+                heroBtnProducts: "استكشف التشكيلة",
+                heroBtnWa: "تواصل عبر الواتساب",
+                lblPhone1: "الهاتف 1:",
+                lblPhone2: "الهاتف 2:",
+                secProdTitle: "معرض المنتجات",
+                secProdSub: "الفاخرة",
+                secProdDesc: "اختر التصميم الذي يناسب ذوقك الرفيع من أحدث تشكيلاتنا المتاحة بالمعرض.",
+                tabAll: "الكل",
+                tabSalons: "صالونات",
+                tabBedrooms: "غرف نوم",
+                tabDining: "طاولات طعام",
+                tabDecor: "ديكورات",
+                tabOffers: "Remise",
+                tabTombola: "Tombola",
+                offerTag: "عروض حصرية",
+                offerTitle: "تخفيضات وسحوبات الطومبولا الكبرى",
+                offerDesc: "استمتع بأقوى العروض الحصرية والتخفيضات الاستثنائية مع فرصة الدخول في سحوبات طومبولا بلموندو عند الشراء من المعرض!",
+                tombolaBoxTitle: "سحوبات طومبولا المعرض",
+                tombolaBoxDesc: "كل اقتناء يمنحك فرصة دخول سحب طومبولا بلموندو للفوز بجوائز قيمة.",
+                tombolaBoxCall: "اتصل للاستفسار",
+                gpsBadge: "موقعنا المباشر عبر الجي بي أس",
+                gpsTitle1: "تفضلوا بزيارة معرض",
+                gpsTitle2: "Eurl Belmondo Chlef",
+                gpsSub: "موقع معرضنا على الـ GPS بمدينة الشلف لمعاينة أفضل التشكيلات المتاحة.",
+                gpsCardSub: "معرض بلموندو للأثاث والديكور - الشلف",
+                gpsAddress: "ولاية الشلف، الجزائر (Chlef, Algeria)",
+                gpsDelivery: "توصيل متوفر لكافة الولايات",
+                btnGpsOpen: "فتح الاتجاهات مباشرة على Google Maps",
+                copyrightText: "جميع الحقوق محفوظة © طيب أحمد عبد الكريم 2026",
+                footerAbout: "معرض بلموندو للأثاث والديكور الراقي بالشلف (Eurl Belmondo Chlef). تصميمات فاخرة وجودة استثنائية.",
+                footerQuickLinks: "الروابط السريعة",
+                footerContactTitle: "الاتصال المباشر",
+                footerAdminTitle: "لوحة المشرف",
+                footerAdminSub: "تسجيل الدخول الآمن لإدارة المنتجات والتخفيضات.",
+                fBtnAdmin: "تسجيل دخول المشرف",
+                admHeaderTitle: "لوحة إشراف وإدارة المعرض",
+                admHeaderSub: "إضافة، تعديل وحذف المنتجات والعروض مع التحديث الفوري",
+                admBtnLogout: "تسجيل الخروج",
+                lblProdName: "اسم المنتج / الأثاث *",
+                lblProdCategory: "الصنف / القسم *",
+                lblProdPrice: "السعر الأصلي (د.ج) *",
+                lblProdDiscount: "سعر التخفيض Remise (اختياري)",
+                lblProdTags: "شارات خاصة بالمنتج",
+                lblProdImg: "صورة المنتج (تحميل مباشر من الجهاز) *",
+                lblProdDesc: "وصف المنتج والمواصفات",
+                btnResetForm: "إلغاء / تفريغ",
+                lblSaveBtn: "حفظ ونشر المزامنة الفورية",
+                lblAdminListTitle: "إدارة المنتجات المنشورة",
+                thImg: "الصورة",
+                thName: "الاسم",
+                thCat: "الصنف",
+                thPrice: "السعر",
+                thBadges: "الشارات",
+                thActions: "التحكم",
+                modalAuthTitle: "الدخول إلى لوحة الإدارة",
+                modalAuthSub: "أدخل رمز المرور السري (المالك أو المشرف)",
+                modalAuthSubmit: "تأكيد الدخول"
+            },
+            fr: {
+                docTitle: "BELMONDO | Meubles de Luxe - ICI C'EST L'ART",
+                topLocText: "Eurl Belmondo - Chlef, Algérie",
+                topHoursText: "Tous les jours: 09:00 - 20:00",
+                navHome: "Accueil",
+                navProducts: "Produits & Showroom",
+                navOffers: "Offres & Tombola",
+                navLocation: "Position GPS",
+                navContact: "Contactez-nous",
+                btnWaText: "WhatsApp",
+                adminBtnText: "Espace Admin",
+                heroBadge: "Showroom N°1 de Meubles de Luxe & Décoration",
+                heroTitle: "Meubles Belmondo",
+                heroDesc: "Découvrez nos collections luxueuses de salons modernes, chambres à coucher royales, tables à manger et décorations raffinées.",
+                heroBtnProducts: "Explorer la Collection",
+                heroBtnWa: "Contacter sur WhatsApp",
+                lblPhone1: "Tél 1:",
+                lblPhone2: "Tél 2:",
+                secProdTitle: "Collection de Meubles",
+                secProdSub: "Luxueux",
+                secProdDesc: "Sélectionnez le design idéal pour votre intérieur parmi notre collection exclusive.",
+                tabAll: "Tous",
+                tabSalons: "Salons",
+                tabBedrooms: "Chambres",
+                tabDining: "Tables à manger",
+                tabDecor: "Décorations",
+                tabOffers: "Remises",
+                tabTombola: "Tombola",
+                offerTag: "Offres Exclusives",
+                offerTitle: "Remises & Grande Tombola Belmondo",
+                offerDesc: "Profitez de réductions exceptionnelles et tentez votre chance pour gagner à la Tombola lors de chaque achat!",
+                tombolaBoxTitle: "Tombola Belmondo",
+                tombolaBoxDesc: "Chaque achat vous donne un ticket pour participer au tirage au sort.",
+                tombolaBoxCall: "Appeler pour informations",
+                gpsBadge: "Notre Localisation GPS",
+                gpsTitle1: "Visitez Notre Showroom",
+                gpsTitle2: "Eurl Belmondo Chlef",
+                gpsSub: "Retrouvez-nous facilement sur le GPS à Chlef pour découvrir nos meubles.",
+                gpsCardSub: "Showroom Eurl Belmondo Meubles - Chlef",
+                gpsAddress: "Wilaya de Chlef, Algérie",
+                gpsDelivery: "Livraison disponible dans 58 wilayas",
+                btnGpsOpen: "Ouvrir directement dans Google Maps",
+                copyrightText: "Tous droits réservés © Tayeb Ahmed Abdelkrim 2026",
+                footerAbout: "Eurl Belmondo Chlef - Meubles de luxe et décoration haut de gamme.",
+                footerQuickLinks: "Liens Rapides",
+                footerContactTitle: "Contact Direct",
+                footerAdminTitle: "Administration",
+                footerAdminSub: "Accès sécurisé pour gérer le catalogue de meubles.",
+                fBtnAdmin: "Connexion Admin",
+                admHeaderTitle: "Panneau de Gestion Showroom",
+                admHeaderSub: "Ajoutez, modifiez ou supprimez des produits en temps réel",
+                admBtnLogout: "Déconnexion",
+                lblProdName: "Nom du produit *",
+                lblProdCategory: "Catégorie *",
+                lblProdPrice: "Prix original (DZD) *",
+                lblProdDiscount: "Prix Remise (Optionnel)",
+                lblProdTags: "Badges du produit",
+                lblProdImg: "Photo du produit (Import direct) *",
+                lblProdDesc: "Description & Détails",
+                btnResetForm: "Réinitialiser",
+                lblSaveBtn: "Enregistrer & Synchroniser",
+                lblAdminListTitle: "Gestion des produits publiés",
+                thImg: "Image",
+                thName: "Nom",
+                thCat: "Catégorie",
+                thPrice: "Prix",
+                thBadges: "Badges",
+                thActions: "Actions",
+                modalAuthTitle: "Espace d'administration",
+                modalAuthSub: "Saisissez votre code d'accès secret",
+                modalAuthSubmit: "Confirmer"
+            },
+            en: {
+                docTitle: "BELMONDO | Luxury Furniture - ICI C'EST L'ART",
+                topLocText: "Eurl Belmondo - Chlef, Algeria",
+                topHoursText: "Daily: 09:00 - 20:00",
+                navHome: "Home",
+                navProducts: "Products & Showroom",
+                navOffers: "Offers & Tombola",
+                navLocation: "GPS Location",
+                navContact: "Contact Us",
+                btnWaText: "WhatsApp",
+                adminBtnText: "Admin Panel",
+                heroBadge: "Premier Luxury Furniture & Decor Showroom",
+                heroTitle: "Belmondo Furniture",
+                heroDesc: "Discover our luxurious collection of modern living rooms, royal bedroom sets, dining tables and fine home décor.",
+                heroBtnProducts: "Explore Collection",
+                heroBtnWa: "Chat on WhatsApp",
+                lblPhone1: "Phone 1:",
+                lblPhone2: "Phone 2:",
+                secProdTitle: "Luxury Furniture",
+                secProdSub: "Catalog",
+                secProdDesc: "Choose the perfect artistic piece for your home from our available showroom items.",
+                tabAll: "All",
+                tabSalons: "Living Rooms",
+                tabBedrooms: "Bedrooms",
+                tabDining: "Dining Tables",
+                tabDecor: "Decorations",
+                tabOffers: "Discounts",
+                tabTombola: "Tombola",
+                offerTag: "Exclusive Offers",
+                offerTitle: "Discounts & Grand Tombola Draw",
+                offerDesc: "Enjoy exceptional discounts and enter our grand tombola draw with every showroom purchase!",
+                tombolaBoxTitle: "Showroom Tombola",
+                tombolaBoxDesc: "Every purchase grants you a ticket to enter the grand prize raffle.",
+                tombolaBoxCall: "Call for Details",
+                gpsBadge: "Live GPS Location",
+                gpsTitle1: "Visit Our Showroom",
+                gpsTitle2: "Eurl Belmondo Chlef",
+                gpsSub: "Find us easily via GPS in Chlef city to inspect our luxury furniture.",
+                gpsCardSub: "Eurl Belmondo Furniture Showroom - Chlef",
+                gpsAddress: "Chlef Province, Algeria",
+                gpsDelivery: "Delivery available to all provinces",
+                btnGpsOpen: "Open directly in Google Maps",
+                copyrightText: "All rights reserved © Tayeb Ahmed Abdelkrim 2026",
+                footerAbout: "Eurl Belmondo Chlef - Fine luxury furniture and premium interior decor.",
+                footerQuickLinks: "Quick Links",
+                footerContactTitle: "Direct Contact",
+                footerAdminTitle: "Admin Access",
+                footerAdminSub: "Secure dashboard to update furniture inventory.",
+                fBtnAdmin: "Admin Login",
+                admHeaderTitle: "Showroom Management Panel",
+                admHeaderSub: "Add, edit or remove products with live instant sync",
+                admBtnLogout: "Log Out",
+                lblProdName: "Product Name *",
+                lblProdCategory: "Category *",
+                lblProdPrice: "Original Price (DZD) *",
+                lblProdDiscount: "Discounted Price (Optional)",
+                lblProdTags: "Product Badges",
+                lblProdImg: "Product Image (Direct Upload) *",
+                lblProdDesc: "Description & Specifications",
+                btnResetForm: "Reset Form",
+                lblSaveBtn: "Save & Publish Instantly",
+                lblAdminListTitle: "Published Inventory",
+                thImg: "Image",
+                thName: "Name",
+                thCat: "Category",
+                thPrice: "Price",
+                thBadges: "Badges",
+                thActions: "Actions",
+                modalAuthTitle: "Admin Access Verification",
+                modalAuthSub: "Enter your secret access password",
+                modalAuthSubmit: "Confirm"
+            }
+        };
+
+        window.currentLang = 'ar';
+
+        function changeLanguage(lang) {
+            window.currentLang = lang;
+            const t = translations[lang] || translations.ar;
+            
+            // Set text directions
+            if (lang === 'ar') {
+                document.documentElement.setAttribute('dir', 'rtl');
+                document.documentElement.setAttribute('lang', 'ar');
+            } else {
+                document.documentElement.setAttribute('dir', 'ltr');
+                document.documentElement.setAttribute('lang', lang);
+            }
+
+            // Iterate over translations dictionary
+            Object.keys(t).forEach(key => {
+                const el = document.getElementById(key);
+                if (el) {
+                    if (key === 'docTitle') {
+                        document.title = t[key];
+                    } else {
+                        el.textContent = t[key];
+                    }
+                }
+            });
+
+            // Re-render Products with updated locale text
+            renderProductsGrid();
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        }
+
+        function previewImageFile(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            if (file.size > 4 * 1024 * 1024) {
+                alert(window.currentLang === 'fr' ? 'Fichier trop grand (<4MB)' : window.currentLang === 'en' ? 'File size too large (<4MB)' : 'حجم الصورة كبير جداً، يرجى اختيار صورة أقل من 4 ميغابايت');
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const base64Data = e.target.result;
+                document.getElementById('prodImageData').value = base64Data;
+                document.getElementById('imagePreview').src = base64Data;
+                document.getElementById('imagePreviewContainer').classList.remove('hidden');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        // Admin Auth Roles & Logins
+        function openAdminAuthModal() {
+            if (window.isAdminLoggedIn) {
+                document.getElementById('adminPanel').classList.remove('hidden');
+                document.getElementById('adminPanel').scrollIntoView({ behavior: 'smooth' });
+            } else {
+                document.getElementById('adminPassInput').value = '';
+                document.getElementById('adminAuthModal').classList.remove('hidden');
+            }
+        }
+
+        function closeAdminAuthModal() {
+            document.getElementById('adminAuthModal').classList.add('hidden');
+        }
+
+        function verifyAdminPassword(e) {
+            e.preventDefault();
+            const pass = document.getElementById('adminPassInput').value.trim();
+            
+            if (pass === '0') {
+                window.isAdminLoggedIn = true;
+                window.userRole = 'owner';
+                document.getElementById('userRoleBadge').textContent = window.currentLang === 'fr' ? 'Propriétaire' : window.currentLang === 'en' ? 'Owner' : 'المالك الرئيسي';
+                document.getElementById('userRoleBadge').className = 'bg-gold-500 text-emerald-950 text-[10px] font-black px-2.5 py-0.5 rounded-full';
+            } else if (pass === '1') {
+                window.isAdminLoggedIn = true;
+                window.userRole = 'supervisor';
+                document.getElementById('userRoleBadge').textContent = window.currentLang === 'fr' ? 'Superviseur' : window.currentLang === 'en' ? 'Supervisor' : 'مشرف المعرض';
+                document.getElementById('userRoleBadge').className = 'bg-emerald-600 text-white text-[10px] font-black px-2.5 py-0.5 rounded-full';
+            } else {
+                alert(window.currentLang === 'fr' ? 'Code incorrect!' : window.currentLang === 'en' ? 'Incorrect Password!' : 'رمز المرور غير صحيح!');
+                return;
+            }
+
+            closeAdminAuthModal();
+            document.getElementById('adminLockIcon').className = "fa-solid fa-unlock text-gold-400";
+            document.getElementById('adminPanel').classList.remove('hidden');
+            document.getElementById('adminPanel').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function logoutAdmin() {
+            window.isAdminLoggedIn = false;
+            window.userRole = null;
+            document.getElementById('adminLockIcon').className = "fa-solid fa-lock";
+            closeAdminPanel();
+            alert(window.currentLang === 'fr' ? 'Déconnexion réussie.' : window.currentLang === 'en' ? 'Logged out successfully.' : 'تم تسجيل الخروج بنجاح من لوحة الإدارة.');
+        }
+
+        function closeAdminPanel() {
+            document.getElementById('adminPanel').classList.add('hidden');
+        }
+
+        function handleProductSubmit(e) {
+            e.preventDefault();
+
+            const prodId = document.getElementById('prodId').value;
+            const name = document.getElementById('prodName').value.trim();
+            const category = document.getElementById('prodCategory').value;
+            const price = parseFloat(document.getElementById('prodPrice').value);
+            const discountPrice = document.getElementById('prodDiscountPrice').value ? parseFloat(document.getElementById('prodDiscountPrice').value) : null;
+            
+            const isRemise = document.getElementById('tagRemise').checked || (discountPrice && discountPrice < price);
+            const isTombola = document.getElementById('tagTombola').checked;
+            const isNew = document.getElementById('tagNew').checked;
+            
+            const imageData = document.getElementById('prodImageData').value || 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80';
+            const desc = document.getElementById('prodDesc').value.trim();
+
+            const productObject = {
+                name,
+                category,
+                price,
+                discountPrice,
+                isRemise,
+                isTombola,
+                isNew,
+                imageData,
+                desc
+            };
+
+            window.saveProductToFirebase(productObject, prodId ? prodId : null);
+        }
+
+        function resetProductForm() {
+            document.getElementById('productForm').reset();
+            document.getElementById('prodId').value = '';
+            document.getElementById('prodImageData').value = '';
+            document.getElementById('imagePreviewContainer').classList.add('hidden');
+        }
+
+        function editProduct(id) {
+            const p = window.allProducts[id];
+            if (!p) return;
+
+            document.getElementById('prodId').value = id;
+            document.getElementById('prodName').value = p.name;
+            document.getElementById('prodCategory').value = p.category || 'salons';
+            document.getElementById('prodPrice').value = p.price;
+            document.getElementById('prodDiscountPrice').value = p.discountPrice || '';
+            document.getElementById('tagRemise').checked = p.isRemise || false;
+            document.getElementById('tagTombola').checked = p.isTombola || false;
+            document.getElementById('tagNew').checked = p.isNew || false;
+            document.getElementById('prodDesc').value = p.desc || '';
+            
+            if (p.imageData) {
+                document.getElementById('prodImageData').value = p.imageData;
+                document.getElementById('imagePreview').src = p.imageData;
+                document.getElementById('imagePreviewContainer').classList.remove('hidden');
+            }
+
+            document.getElementById('adminPanel').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function filterProducts(category) {
+            window.currentCategoryFilter = category;
+            
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                if (btn.getAttribute('data-cat') === category) {
+                    btn.classList.add('bg-gold-500', 'text-emerald-950');
+                    btn.classList.remove('bg-emerald-900/80', 'text-gray-200');
+                } else {
+                    btn.classList.remove('bg-gold-500', 'text-emerald-950');
+                    btn.classList.add('bg-emerald-900/80', 'text-gray-200');
+                }
+            });
+
+            renderProductsGrid();
+        }
+
+        function renderProductsGrid() {
+            const container = document.getElementById('productsGrid');
+            const products = window.allProducts;
+            const keys = Object.keys(products);
+
+            if (keys.length === 0) {
+                container.innerHTML = `
+                    <div class="col-span-full py-12 text-center text-gray-300 card-glass rounded-2xl p-6">
+                        <i class="fa-solid fa-couch text-4xl text-gold-400 mb-3"></i>
+                        <p class="font-bold text-lg">${window.currentLang === 'fr' ? 'Aucun produit disponible' : window.currentLang === 'en' ? 'No products available' : 'لا توجد منتجات معروضة حالياً'}</p>
+                    </div>
+                `;
+                return;
+            }
+
+            let filteredKeys = keys.filter(id => {
+                const item = products[id];
+                if (window.currentCategoryFilter === 'all') return true;
+                if (window.currentCategoryFilter === 'offers') return item.isRemise || item.discountPrice;
+                if (window.currentCategoryFilter === 'tombola') return item.isTombola;
+                return item.category === window.currentCategoryFilter;
+            });
+
+            if (filteredKeys.length === 0) {
+                container.innerHTML = `
+                    <div class="col-span-full py-12 text-center text-gray-300 card-glass rounded-2xl p-6">
+                        <i class="fa-solid fa-filter-circle-xmark text-4xl text-gold-400 mb-3"></i>
+                        <p class="font-bold text-base">${window.currentLang === 'fr' ? 'Aucun produit dans cette catégorie' : window.currentLang === 'en' ? 'No products in this category' : 'لا توجد منتجات ضمن هذا التصنيف'}</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = filteredKeys.map(id => {
+                const item = products[id];
+                const formattedPrice = Number(item.price).toLocaleString() + ' DZD';
+                const formattedDiscount = item.discountPrice ? Number(item.discountPrice).toLocaleString() + ' DZD' : null;
+                
+                const waMsg = encodeURIComponent(`Bonjour/السلام عليكم, Eurl Belmondo. Je souhaite réserver / me renseigner sur: (${item.name}) - ${item.discountPrice || item.price} DZD.`);
+
+                return `
+                    <div class="card-glass rounded-2xl overflow-hidden border border-gold-500/30 flex flex-col justify-between group hover:border-gold-400 transition-all duration-300 hover:-translate-y-1 shadow-xl">
+                        <div class="relative overflow-hidden h-56 bg-emerald-950">
+                            <img src="${item.imageData || 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80'}" 
+                                 alt="${item.name}" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                                 onerror="this.src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80'">
+                            
+                            <div class="absolute top-3 right-3 flex flex-col gap-1.5 items-end z-10">
+                                ${item.isRemise ? `<span class="px-2.5 py-1 bg-red-600 text-white font-bold text-[10px] rounded-md shadow-md uppercase tracking-wider"><i class="fa-solid fa-percent"></i> Remise</span>` : ''}
+                                ${item.isTombola ? `<span class="badge-tombola px-2.5 py-1 text-white font-black text-[10px] rounded-md shadow-md uppercase"><i class="fa-solid fa-ticket"></i> Tombola</span>` : ''}
+                                ${item.isNew ? `<span class="px-2.5 py-1 bg-emerald-600 text-white font-bold text-[10px] rounded-md shadow-md">Nouveau</span>` : ''}
+                            </div>
+                        </div>
+
+                        <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                            <div>
+                                <h3 class="font-bold text-lg text-white group-hover:text-gold-300 transition line-clamp-1">${item.name}</h3>
+                                <p class="text-xs text-gray-300 mt-1 line-clamp-2 leading-relaxed">${item.desc || 'Meubles Belmondo - Haute qualité.'}</p>
+                            </div>
+
+                            <div class="pt-2 border-t border-gold-500/20 space-y-3">
+                                <div class="flex items-baseline gap-2">
+                                    ${formattedDiscount ? `
+                                        <span class="text-xl font-black text-gold-400 font-brand">${formattedDiscount}</span>
+                                        <span class="text-xs text-red-400 line-through font-brand">${formattedPrice}</span>
+                                    ` : `
+                                        <span class="text-xl font-black text-gold-400 font-brand">${formattedPrice}</span>
+                                    `}
+                                </div>
+
+                                <a href="https://wa.me/213550606628?text=${waMsg}" target="_blank" 
+                                   class="w-full bg-emerald-800/90 hover:bg-emerald-700 text-white font-bold py-2.5 rounded-xl text-xs flex items-center justify-center gap-2 border border-gold-500/30 transition shadow-md">
+                                    <i class="fa-brands fa-whatsapp text-emerald-400 text-base"></i>
+                                    <span>${window.currentLang === 'fr' ? 'Commander via WhatsApp' : window.currentLang === 'en' ? 'Order via WhatsApp' : 'طلب عبر الواتساب'}</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function renderAdminProductsTable() {
+            const tbody = document.getElementById('adminProductsTableBody');
+            const products = window.allProducts;
+            const keys = Object.keys(products);
+
+            document.getElementById('adminProdCount').textContent = keys.length;
+
+            if (keys.length === 0) {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="6" class="p-4 text-center text-gray-400">لا توجد منتجات مسجلة حالياً.</td>
+                    </tr>
+                `;
+                return;
+            }
+
+            tbody.innerHTML = keys.map(id => {
+                const item = products[id];
+                return `
+                    <tr class="border-b border-gold-500/10 hover:bg-emerald-900/40">
+                        <td class="p-3">
+                            <img src="${item.imageData || 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80'}" class="w-12 h-12 object-cover rounded-lg border border-gold-500/30">
+                        </td>
+                        <td class="p-3 font-bold text-white">${item.name}</td>
+                        <td class="p-3 text-xs text-gray-300">${item.category || 'عام'}</td>
+                        <td class="p-3 font-brand text-gold-400 font-bold">
+                            ${item.discountPrice ? `${item.discountPrice}` : item.price} DZD
+                        </td>
+                        <td class="p-3 text-xs">
+                            ${item.isRemise ? '<span class="text-red-400 font-bold ml-1">[Remise]</span>' : ''}
+                            ${item.isTombola ? '<span class="text-amber-400 font-bold ml-1">[Tombola]</span>' : ''}
+                        </td>
+                        <td class="p-3 text-center">
+                            <div class="flex items-center justify-center gap-2">
+                                <button onclick="editProduct('${id}')" class="px-2.5 py-1 bg-gold-500/20 text-gold-300 hover:bg-gold-500 hover:text-emerald-950 rounded text-xs font-bold transition">
+                                    تعديل
+                                </button>
+                                <button onclick="window.deleteProductFromFirebase('${id}')" class="px-2.5 py-1 bg-red-900/40 text-red-300 hover:bg-red-600 hover:text-white rounded text-xs font-bold transition">
+                                    حذف
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+    </script>
+</body>
+</html>
