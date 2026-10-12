@@ -44,7 +44,6 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    .gold-border { border-color: rgba(212, 175, 55, 0.4); }
     .bg-emerald-pattern {
       background-color: #063B2B;
       background-image: radial-gradient(circle at 50% 50%, #0a523c 0%, #03241a 100%);
@@ -88,7 +87,7 @@
         <a href="#location" class="hidden sm:flex items-center gap-1 text-xs text-brand-lightGold hover:text-white bg-white/5 border border-brand-gold/30 px-3 py-2 rounded-lg transition-all">
           <i class="fa-solid fa-map-location-dot text-brand-gold"></i> موقعنا
         </a>
-        <button onclick="checkAdminPassword()" class="bg-gradient-to-r from-brand-gold to-brand-darkGold hover:brightness-110 text-black font-extrabold px-4 py-2 rounded-lg text-xs md:text-sm shadow-lg transition-all flex items-center gap-2">
+        <button id="adminBtn" type="button" class="bg-gradient-to-r from-brand-gold to-brand-darkGold hover:brightness-110 text-black font-extrabold px-4 py-2 rounded-lg text-xs md:text-sm shadow-lg transition-all flex items-center gap-2 cursor-pointer">
           <i class="fa-solid fa-lock"></i> لوحة الإدارة
         </button>
       </div>
@@ -125,13 +124,13 @@
       <h3 class="text-2xl font-bold gold-gradient-text flex items-center gap-2">
         <i class="fa-solid fa-sliders"></i> لوحة تحكم الإدارة
       </h3>
-      <button onclick="closeAdminPanel()" class="text-gray-400 hover:text-white text-xl">
+      <button type="button" id="closeAdminBtn" class="text-gray-400 hover:text-white text-xl">
         <i class="fa-solid fa-xmark"></i>
       </button>
     </div>
 
     <!-- Form -->
-    <form id="productForm" onsubmit="handleFormSubmit(event)" class="space-y-6">
+    <form id="productForm" class="space-y-6">
       <input type="hidden" id="editIndex" value="-1">
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -157,12 +156,12 @@
       <!-- Upload Local Images -->
       <div>
         <label class="block text-xs text-brand-lightGold mb-2 font-bold">اختر صور المنتج من الهاتف أو الحاسوب (يمكن اختيار أكثر من صورة) *</label>
-        <input type="file" id="pImagesInput" accept="image/*" multiple onchange="previewSelectedImages(event)" class="block w-full text-xs text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-brand-gold file:text-black hover:file:bg-brand-lightGold cursor-pointer">
+        <input type="file" id="pImagesInput" accept="image/*" multiple class="block w-full text-xs text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-brand-gold file:text-black hover:file:bg-brand-lightGold cursor-pointer">
         <div id="imagePreviews" class="flex flex-wrap gap-3 mt-4"></div>
       </div>
 
       <div class="flex justify-end gap-3 pt-4 border-t border-brand-gold/20">
-        <button type="button" onclick="resetForm()" class="px-5 py-2.5 rounded-lg border border-gray-600 text-gray-300 text-xs font-bold hover:bg-white/5">إلغاء</button>
+        <button type="button" id="resetBtn" class="px-5 py-2.5 rounded-lg border border-gray-600 text-gray-300 text-xs font-bold hover:bg-white/5">إلغاء</button>
         <button type="submit" id="submitBtn" class="bg-brand-gold text-black font-extrabold px-8 py-2.5 rounded-lg text-xs hover:bg-brand-lightGold transition-all shadow-lg">
           حفظ ونشر المنتج
         </button>
@@ -193,7 +192,7 @@
       <!-- Contact Info -->
       <div class="space-y-4">
         <span class="text-brand-gold font-bold text-xs uppercase tracking-widest">تفضلوا بزيارتنا</span>
-        <h3 class="text-2xl md:text-3xl font-bold text-white">موقع معرض BELMONDO</h3>
+        <h3 class="text-2xl md:text-3xl font-bold text-white">معرض Belmondo Furniture & Decor</h3>
         <p class="text-sm text-brand-grayText leading-relaxed">
           يسعدنا استقبالكم في معرضنا للاطلاع على أرقى التشكيلات والاستفادة من استشارات مهندسي الديكور لدينا.
         </p>
@@ -202,8 +201,8 @@
           <div class="flex items-center gap-3 bg-black/40 p-3 rounded-xl border border-brand-gold/20">
             <i class="fa-solid fa-location-dot text-brand-gold text-xl"></i>
             <div>
-              <p class="font-bold text-white">العنوان بالكامل</p>
-              <p class="text-xs text-brand-grayText">القواسمية - طريق المطار - الشلف، الجزائر</p>
+              <p class="font-bold text-white">العنوان المباشر</p>
+              <p class="text-xs text-brand-grayText">معرض بلموندو، القواسمية - طريق المطار - الشلف، الجزائر</p>
             </div>
           </div>
 
@@ -216,16 +215,16 @@
           </div>
         </div>
 
-        <a href="https://maps.google.com/?q=Chlef+Airport+Road" target="_blank" class="inline-flex items-center gap-2 bg-brand-gold text-black font-extrabold text-xs px-6 py-3 rounded-xl hover:bg-brand-lightGold transition-all shadow-lg mt-2">
-          <i class="fa-solid fa-diamond-turn-right"></i> فتح الموقع في خرائط Google GPS
+        <a href="https://www.google.com/maps/search/?api=1&query=Belmondo+Furniture+El+Ghouassemia+Chlef" target="_blank" class="inline-flex items-center gap-2 bg-brand-gold text-black font-extrabold text-xs px-6 py-3 rounded-xl hover:bg-brand-lightGold transition-all shadow-lg mt-2">
+          <i class="fa-solid fa-diamond-turn-right"></i> فتح موقع Belmondo مباشرة في خرائط GPS
         </a>
       </div>
 
-      <!-- Google Maps Embed -->
+      <!-- Google Maps Embed for Belmondo -->
       <div class="h-80 rounded-2xl overflow-hidden border-2 border-brand-gold/40 shadow-2xl relative bg-black/50">
         <iframe 
-          title="Belmondo Location"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12978.892837265893!2d1.3255!3d36.2120!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzbCsDEyJzQzLjIiTiAxwrAxOSczMS44IkU!5e0!3m2!1sar!2sdz!4v1690000000000!5m2!1sar!2sdz" 
+          title="Belmondo Showroom Location"
+          src="https://maps.google.com/maps?q=El%20Ghouassemia%20Airport%20Road%20Chlef&t=&z=15&ie=UTF8&iwloc=&output=embed" 
           class="w-full h-full border-0 grayscale hover:grayscale-0 transition-all duration-500" 
           allowfullscreen="" 
           loading="lazy">
@@ -249,12 +248,32 @@
 
     let products = [];
     let currentUploadedImages = [];
+    let isAdminLoggedIn = false;
+
+    // ربط الأحداث بعد إتمام تحميل DOM
+    document.addEventListener("DOMContentLoaded", function() {
+      document.getElementById('adminBtn').addEventListener('click', checkAdminPassword);
+      document.getElementById('closeAdminBtn').addEventListener('click', closeAdminPanel);
+      document.getElementById('resetBtn').addEventListener('click', resetForm);
+      document.getElementById('pImagesInput').addEventListener('change', previewSelectedImages);
+      document.getElementById('productForm').addEventListener('submit', handleFormSubmit);
+
+      loadProductsFromDB();
+    });
 
     // التحقق من كلمة السر لوحة التحكم
     function checkAdminPassword() {
-      const pass = prompt("الرجاء إدخال الرمز السري للوحة الإدارة:");
-      if (pass === ADMIN_PASS) {
+      if (isAdminLoggedIn) {
         document.getElementById('adminPanel').classList.remove('hidden');
+        window.scrollTo({ top: document.getElementById('adminPanel').offsetTop - 80, behavior: 'smooth' });
+        return;
+      }
+
+      const pass = prompt("الرجاء إدخل الرمز السري للوحة الإدارة:");
+      if (pass === ADMIN_PASS) {
+        isAdminLoggedIn = true;
+        document.getElementById('adminPanel').classList.remove('hidden');
+        showAdminButtonsOnCards();
         window.scrollTo({ top: document.getElementById('adminPanel').offsetTop - 80, behavior: 'smooth' });
       } else if (pass !== null) {
         alert("الرمز السري غير صحيح!");
@@ -269,15 +288,12 @@
     // معاينة الصور المحملة من الهاتف/الحاسوب
     function previewSelectedImages(event) {
       const files = event.target.files;
-      const previewContainer = document.getElementById('imagePreviews');
-      
       if (!files || files.length === 0) return;
 
       Array.from(files).forEach(file => {
         const reader = new FileReader();
         reader.onload = function(e) {
-          const base64Img = e.target.result;
-          currentUploadedImages.push(base64Img);
+          currentUploadedImages.push(e.target.result);
           renderImagePreviews();
         };
         reader.readAsDataURL(file);
@@ -293,7 +309,7 @@
         div.className = "relative w-20 h-20 rounded-lg overflow-hidden border border-brand-gold group";
         div.innerHTML = `
           <img src="${imgSrc}" class="w-full h-full object-cover">
-          <button type="button" onclick="removeImage(${idx})" class="absolute top-1 right-1 bg-red-600 text-white rounded-full w-5 h-5 flex items-center justify-center text-[10px]">✕</button>
+          <button type="button" onclick="removeImage(${idx})" class="absolute top-1 right-1 bg-red-600 text-white rounded-full w-5 h-5 flex items-center justify-center text-[10px] cursor-pointer">✕</button>
         `;
         previewContainer.appendChild(div);
       });
@@ -368,10 +384,10 @@
               ${hasMultiple ? `<span class="absolute bottom-3 left-3 bg-black/70 text-brand-lightGold text-[10px] px-2 py-0.5 rounded border border-brand-gold/30"><i class="fa-solid fa-images"></i> ${prod.images.length} صور</span>` : ''}
             </div>
 
-            <!-- Image thumbnails selector if multiple -->
+            <!-- Image thumbnails selector -->
             ${hasMultiple ? `
               <div class="flex gap-1 p-2 bg-black/40 overflow-x-auto border-b border-brand-gold/10">
-                ${prod.images.map((img, i) => `
+                ${prod.images.map((img) => `
                   <img src="${img}" onclick="changeCardImage(${index}, '${img}')" class="w-10 h-10 object-cover rounded cursor-pointer border border-transparent hover:border-brand-gold">
                 `).join('')}
               </div>
@@ -392,24 +408,5 @@
               <i class="fa-brands fa-whatsapp"></i> طلب المنتج
             </a>
             
-            <div id="adminActions-${index}" class="hidden flex gap-2">
-              <button onclick="editProduct(${index})" class="text-xs text-brand-gold hover:underline"><i class="fa-solid fa-pen"></i> تعديل</button>
-              <button onclick="deleteProduct(${index})" class="text-xs text-red-400 hover:underline"><i class="fa-solid fa-trash"></i> حذف</button>
-            </div>
-          </div>
-        `;
-        grid.appendChild(card);
-      });
-
-      // إظهار أزرار الحذف والتعديل إذا كانت لوحة الإدارة مفتوحة
-      if (!document.getElementById('adminPanel').classList.contains('hidden')) {
-        showAdminButtonsOnCards();
-      }
-    }
-
-    function changeCardImage(cardIdx, imgSrc) {
-      document.getElementById(`cardImg-${cardIdx}`).src = imgSrc;
-    }
-
-    function showAdminButtonsOnCards() {
-      pr
+            <div id="adminActions-${index}" class="${isAdminLoggedIn ? 'flex' : 'hidden'} gap-2">
+              <button onclick="editProduct(${index})" class="text-xs text-brand
